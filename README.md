@@ -69,7 +69,7 @@ Step 5: Check the Network on Kali
 
 I checked that Kali had the right IP address and could reach the internet. At first the internet did not work, so I had to fix it with a few commands.
 
-![alt text](
+![alt text](https://github.com/PrudenceSelasiDela-Boso/MY-FIRST-CYBERSECURITY-HOME-LAB-SETUP-KALI-LINUX-AND-VIRTUAL-BOX/blob/main/kali%20vm%20files/Screenshot%202026-10-30%20063732.png)
 
 Step 6: Take a Snapshot
 
