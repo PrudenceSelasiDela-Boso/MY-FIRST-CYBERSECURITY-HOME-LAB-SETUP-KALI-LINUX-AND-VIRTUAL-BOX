@@ -71,6 +71,8 @@ I checked that Kali had the right IP address and could reach the internet. At fi
 
 ![alt text](https://github.com/PrudenceSelasiDela-Boso/MY-FIRST-CYBERSECURITY-HOME-LAB-SETUP-KALI-LINUX-AND-VIRTUAL-BOX/blob/main/kali%20vm%20files/Screenshot%202026-10-30%20063732.png)
 
+![alt text](https://github.com/PrudenceSelasiDela-Boso/MY-FIRST-CYBERSECURITY-HOME-LAB-SETUP-KALI-LINUX-AND-VIRTUAL-BOX/blob/main/kali%20vm%20files/Screenshot%202026-10-30%20064121.png)
+
 Step 6: Take a Snapshot
 
 Once everything worked, I took a snapshot and named it something like "Clean Kali - Network Setup". If I mess up later, I can go back to this point.
