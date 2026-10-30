@@ -61,6 +61,7 @@ Click on machine in the virtual box
 Select open 
 Navigate to locate the extracted kali file and select 
 After it loads, click on start
+![alt text](https://github.com/PrudenceSelasiDela-Boso/MY-FIRST-CYBERSECURITY-HOME-LAB-SETUP-KALI-LINUX-AND-VIRTUAL-BOX/blob/main/kali%20vm%20files/Screenshot%202026-10-30%20064732.png)
 
 Step 5: Check the Network on Kali
 
