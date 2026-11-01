@@ -40,14 +40,16 @@ VirtualBox: https://virtualbox.org/wiki/Downloads
 Step 2: Download Kali Linux https://kali.org/get-kali
 
 
-Step 3: Create the Network
+Step 3: Create the Network (NAT Network) 
+Open VirtualBox
 Go to files
 Click on tools 
-Select network 
-See problem 1 at the end of this read me if you can’t find network icon.
+Select network (See problem 1 at the end of this read me if you can’t find network icon.)
+![alt text](
+
 Click on NAT Network 
-Click on the create icon and edit the settings 
-Click ok
+Click on the create icon (top left) and edit the settings 
+Click Apply
 
 	NAT Network Settings:
 Network Address	10.0.0.0/24
@@ -58,7 +60,7 @@ DNS Server	8.8.8.8
 ![alt text](https://github.com/PrudenceSelasiDela-Boso/MY-FIRST-CYBERSECURITY-HOME-LAB-SETUP-KALI-LINUX-AND-VIRTUAL-BOX/blob/main/Screenshot%202026-10-30%20224459.png)
 
 Step 4: Import Kali Linux
-Extract the kali zip file downloaded using 7Zip 
+Extract the kali zip file downloaded using 7Zip (see Problem 
 Click on machine in the virtual box
 Select open 
 Navigate to locate the extracted kali file and select 
@@ -67,9 +69,7 @@ After it loads, click on start
 
 Step 5: Check the Network on Kali
 
-I checked that Kali had the right IP address and could reach the internet. At first the internet did not work, so I had to fix it with a few commands.
-
-![alt text](https://github.com/PrudenceSelasiDela-Boso/MY-FIRST-CYBERSECURITY-HOME-LAB-SETUP-KALI-LINUX-AND-VIRTUAL-BOX/blob/main/kali%20vm%20files/Screenshot%202026-10-30%20063732.png)
+I checked that Kali had the right IP address and could reach the internet. At first the internet did not work, so I had to fix it with a few commands (see Problem 4)
 
 ![alt text](https://github.com/PrudenceSelasiDela-Boso/MY-FIRST-CYBERSECURITY-HOME-LAB-SETUP-KALI-LINUX-AND-VIRTUAL-BOX/blob/main/kali%20vm%20files/Screenshot%202026-10-30%20064121.png)
 
@@ -77,14 +77,13 @@ Step 6: Take a Snapshot
 
 Once everything worked, I took a snapshot and named it something like "Clean Kali - Network Setup". If I mess up later, I can go back to this point.
 
-How I Checked That It Works
+![alt text]( 
 
 Problems I Ran Into
 
 I hit some problems along the way. I am keeping them here because I learned the most from them.
 
-Problem 1: I could not find the Network button in VirtualBox
-
+**Problem 1:** I could not find the Network button in VirtualBox
 What happened: I wanted to create my lab network, but the Network button was not showing in the Tools menu. 
 
 How I fixed it:
@@ -94,29 +93,35 @@ How I fixed it:
 3. Close the dialog box.
 4. Click Tools. The Network button now shows.
 
-Problem 2: Not enough space to extract Kali
+**Problem 2:** VirtualBox couldn't recognize the initial kali file i extracted.
+What happened: I extracted the zip file downloaded straight forward without using 7zip.
 
-What happened: The Kali file would not extract because my computer did not have enough free space.
+How I fixed it: I redownloaded the kali file and followed the steps below:
+Right Click on the zip file 
+select show more options
+Hover over 7zip 
+choose extract file from the menu that appears
 
-**How I fixed it:** I used the Control Panel to free up space. I removed programs I no longer use and cleared some files from my Downloads folder. After that, the extraction worked.
+**Problem 3:** Not enough space to extract Kali
+What happened: The Kali file would not extract because my computer did not have enough free space. 
 
-Problem 3: No internet connection in Kali
+How I fixed it: I used the Control Panel to free up space. I removed programs I no longer use and cleared some files from my Downloads folder. After that, the extraction worked. If you have a laptop/desktop with 8GB+ RAM (16GB minimum), you can work aroung it.
 
+**Problem 4:** No internet connection in Kali
 What happened: After setting up Kali, I had no internet connection.
 
 How I fixed it: I ran these three commands in the Kali terminal:
-
 ```
 sudo nmcli connection modify "Wired connection 1" ipv4.dad-timeout 0
 sudo nmcli connection down "Wired connection 1"
 sudo nmcli connection up "Wired connection 1"
 ```
-
 The first command changes a network setting. The next two turn the connection off and back on so the change takes effect. After this, my connection came back.
+![alt text](https://github.com/PrudenceSelasiDela-Boso/MY-FIRST-CYBERSECURITY-HOME-LAB-SETUP-KALI-LINUX-AND-VIRTUAL-BOX/blob/main/kali%20vm%20files/Screenshot%202026-10-30%20063732.png)
 
 Note: "Wired connection 1" is the name of my connection. Yours may be different. You can check the name with `nmcli connection show` before running the commands.
 
-What I Learned
+**What I Learned**
 
 1. It is never too late to ask for help.
 
@@ -138,7 +143,7 @@ Taking a snapshot of a clean setup means I can experiment without fear of breaki
 
 Documenting my steps helped me understand them better, and it will help me if I need to rebuild the lab.
 
-What Is Next
+**What Is Next**
 
 - Add a target machine to the network for practice
 - Try basic scans with Nmap
