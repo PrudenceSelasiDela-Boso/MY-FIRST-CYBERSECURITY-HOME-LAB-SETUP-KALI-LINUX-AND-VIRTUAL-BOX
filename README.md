@@ -1,11 +1,8 @@
 # MY-FIRST-CYBERSECURITY-HOME-LAB-SETUP-KALI-LINUX-AND-VIRTUAL-BOX
 Documenting my first cybersecurity home lab: setting up VirtualBox and Kali Linux, step by step, with notes on what I learned along the way.
 
-My first cybersecurity home lab, built with VirtualBox and Kali Linux. I wrote down every step, including the mistakes, so other beginners can follow along.
-
 About This Project
-
-I am new to cybersecurity, and this is my first hands-on project. The goal was to set up a safe place on my own computer where I can practice cybersecurity skills without touching anything real.
+The goal was to set up a safe place on my own computer where I can practice cybersecurity skills without touching anything real.
 
 The lab runs on a private virtual network. Later, I plan to add more virtual machines to the same network to use as practice targets.
 
@@ -31,16 +28,16 @@ As I keep learning, I plan to use it to practice things like:
 
 How I Set It Up
 
-Step 1: Install VirtualBox and 7zip
+**Step 1:** Install VirtualBox and 7zip
 
 VirtualBox: https://virtualbox.org/wiki/Downloads
 
 7-zip: https://7-zip.org/download.html
 
-Step 2: Download Kali Linux https://kali.org/get-kali
+**Step 2:** Download Kali Linux https://kali.org/get-kali
 
 
-Step 3: Create the Network (NAT Network) 
+**Step 3:** Create the Network (NAT Network) 
 Open VirtualBox
 Go to files
 Click on tools 
@@ -67,7 +64,12 @@ Navigate to locate the extracted kali file and select
 After it loads, click on start
 ![alt text](https://github.com/PrudenceSelasiDela-Boso/MY-FIRST-CYBERSECURITY-HOME-LAB-SETUP-KALI-LINUX-AND-VIRTUAL-BOX/blob/main/kali%20vm%20files/Screenshot%202026-10-30%20064732.png)
 
-Step 5: Check the Network on Kali
+Step 5: Log in and check the Network on Kali
+
+Enetr username: kali 
+Password: kali
+
+![alt text](https://github.com/PrudenceSelasiDela-Boso/MY-FIRST-CYBERSECURITY-HOME-LAB-SETUP-KALI-LINUX-AND-VIRTUAL-BOX/blob/main/kali%20vm%20files/Screenshot%202026-10-29%20195127.png
 
 I checked that Kali had the right IP address and could reach the internet. At first the internet did not work, so I had to fix it with a few commands (see Problem 4)
 
@@ -76,10 +78,15 @@ I checked that Kali had the right IP address and could reach the internet. At fi
 Step 6: Take a Snapshot
 
 Once everything worked, I took a snapshot and named it something like "Clean Kali - Network Setup". If I mess up later, I can go back to this point.
+Steps: Log out of the kali machine back to VirtualBox
+Select snapshot
+click on take
+edit the name and description
+save 
 
-![alt text]( 
+![alt text](https://github.com/PrudenceSelasiDela-Boso/MY-FIRST-CYBERSECURITY-HOME-LAB-SETUP-KALI-LINUX-AND-VIRTUAL-BOX/blob/main/kali%20vm%20files/Screenshot%202026-10-30%20064711.png)
 
-Problems I Ran Into
+***Problems I Ran Into***
 
 I hit some problems along the way. I am keeping them here because I learned the most from them.
 
@@ -87,11 +94,12 @@ I hit some problems along the way. I am keeping them here because I learned the 
 What happened: I wanted to create my lab network, but the Network button was not showing in the Tools menu. 
 
 How I fixed it:
-
 1. Click File, then select Preferences.
 2. Click Expert.
 3. Close the dialog box.
 4. Click Tools. The Network button now shows.
+   
+![alt text](https://github.com/PrudenceSelasiDela-Boso/MY-FIRST-CYBERSECURITY-HOME-LAB-SETUP-KALI-LINUX-AND-VIRTUAL-BOX/blob/main/Expert%20preference.png)
 
 **Problem 2:** VirtualBox couldn't recognize the initial kali file i extracted.
 What happened: I extracted the zip file downloaded straight forward without using 7zip.
@@ -101,6 +109,10 @@ Right Click on the zip file
 select show more options
 Hover over 7zip 
 choose extract file from the menu that appears
+
+![alt text](https://github.com/PrudenceSelasiDela-Boso/MY-FIRST-CYBERSECURITY-HOME-LAB-SETUP-KALI-LINUX-AND-VIRTUAL-BOX/blob/main/Show%20more%20options.png)
+
+![alt text](https://github.com/PrudenceSelasiDela-Boso/MY-FIRST-CYBERSECURITY-HOME-LAB-SETUP-KALI-LINUX-AND-VIRTUAL-BOX/blob/main/7%20zip%20extract%20files.png)
 
 **Problem 3:** Not enough space to extract Kali
 What happened: The Kali file would not extract because my computer did not have enough free space. 
@@ -117,6 +129,7 @@ sudo nmcli connection down "Wired connection 1"
 sudo nmcli connection up "Wired connection 1"
 ```
 The first command changes a network setting. The next two turn the connection off and back on so the change takes effect. After this, my connection came back.
+
 ![alt text](https://github.com/PrudenceSelasiDela-Boso/MY-FIRST-CYBERSECURITY-HOME-LAB-SETUP-KALI-LINUX-AND-VIRTUAL-BOX/blob/main/kali%20vm%20files/Screenshot%202026-10-30%20063732.png)
 
 Note: "Wired connection 1" is the name of my connection. Yours may be different. You can check the name with `nmcli connection show` before running the commands.
